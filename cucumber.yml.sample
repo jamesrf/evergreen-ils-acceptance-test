@@ -1,0 +1,6 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: --tags @any,@testing
+testing: --tags @any,@testing
+prod_pl: --tags @any,@publiclibrary
