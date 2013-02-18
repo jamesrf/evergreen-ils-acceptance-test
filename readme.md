@@ -8,8 +8,7 @@ This is a set of tests using cucumber and capybara for the Evergreen TPAC
     
 ### Linux and OS X users
 
-If you are not familiar with Ruby, I recommend you install and configure Ruby Version Manager (rvm) https://rvm.io
-This allows you to use the latest versions of Ruby and to avoid mucking with your vendor's preinstalled Ruby
+If you are not familiar with Ruby, I recommend you install and configure Ruby Version Manager (https://rvm.io) This allows you to use the latest versions of Ruby and to avoid mucking with your vendor's (ie: Apple) preinstalled Ruby
 
 Install the prerequisites by typing from the project root
 
@@ -36,8 +35,7 @@ http://phantomjs.org/
 
 ## Tests
 
-Tests are in .feature files in the features/ directory.  They are in gherkin format.  For information on how to write
-these tests, see the the links below.  It is important to keep the tests generic and avoid writing automation in the tests themselves.
+Tests are in .feature files in the features/ directory.  They are in gherkin format.  For information on how to write these tests, see the the links below.  It is important to keep the tests generic and avoid writing automation in the tests themselves.
 
 I have used tags in the tests to allow for different data sets.  So far I have defined the following tags:
 
@@ -55,6 +53,12 @@ I have used tags in the tests to allow for different data sets.  So far I have d
 
 Tags can be added to an entire feature or an individual scenario.  The default will just run the @testing and @any
 
+
+## Ruby?  WTF?
+
+Cucumber is mostly designed around the Ruby ecosystem, so those tools are most mature and easy to work with.  There are Cucumber libraries in other languages, so the steps could be rewritten easily in another langaage, the .feature files are totally portable.
+
+ 
 ## Further Reading
 
   * http://www.cuke4ninja.com/
