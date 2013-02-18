@@ -1,10 +1,12 @@
+
 configfile = YAML.load( File.open('config.yml'))
-
-
 
 Capybara.default_driver = :selenium
 
-Capybara.javascript_driver = :webkit
+if configfile['headless']
+  require 'capybara/poltergeist'  
+  Capybara.default_driver = :poltergeist
+end
 
 if configfile['trust-ssl']
   Capybara.register_driver :selenium do |app|

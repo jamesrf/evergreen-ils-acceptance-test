@@ -4,21 +4,7 @@
 
 This is a set of tests using cucumber and capybara for the Evergreen TPAC
 
-## Why
-
-Evergreen needs some tests and QA.  While these tests don't cover everything, they 
-are a start and a generally focused on front-end acceptance testing.  This is most
-useful for libraries/systems/consortia hosting Evergreen ensuring changes are working.
-
-I chose Cucumber because it is a DSL which allows a business-readable language.  This means
-libarians, documentators and others who don't program but are probably systems thinkers can 
-still contribute to this project.
-
-I chose Capybara because it is easy to use and a reasonably mature project.  Cucumber works
-in many programming languages, so tests could be written to use the same Cucumber feature files
-in any language that has a Cucumber library.
-
-## How
+## How to set up
     
 ### Linux and OS X users
 
@@ -26,22 +12,53 @@ If you are not familiar with Ruby, I recommend you install and configure Ruby Ve
 This allows you to use the latest versions of Ruby and to avoid mucking with your vendor's preinstalled Ruby
 
 Install the prerequisites by typing from the project root
+
     bundle install
 
-Again from the project root, type 'cucumber' to run the tests
+If you don't want to use the headless mode which requires phantomjs, run this:
+
+    bundle install --without poltergeist
 
 
-### Windows Users
+#### cucumber.yml
 
-This is not a simple process, you will probably have problems.
+You will need to copy cucumber.yml.sample to cucumber.yml, this defines a set of profiles for different tests to run.
 
-You will need to install Ruby probably via Rubyinstaller (rubyinstaller.org).
+#### config.yml
 
-The ruby json gem is required, which requires you install Rubyinstaller's DevKit.  Instructions are here: https://github.com/oneclick/rubyinstaller/wiki/development-kit
+This file currently has two options:
 
-For colorful output you may also want ANSICON: http://adoxa.3eeweb.com/ansicon/
- 
-Once you have that, open your Ruby terminal install the dependencies as in  run as above.
- 
+  hostname: http://nameofevergreenserver.com
+  headless: true
 
+If headless is any non-false value, the poltergeist driver will be used instead of selenium.   This requires phantomjs.
+http://phantomjs.org/
+
+## Tests
+
+Tests are in .feature files in the features/ directory.  They are in gherkin format.  For information on how to write
+these tests, see the the links below.  It is important to keep the tests generic and avoid writing automation in the tests themselves.
+
+I have used tags in the tests to allow for different data sets.  So far I have defined the following tags:
+
+@testing
+    - tests suitable for running in a test environment with Evergreen's included test data (ie: Concerto)
+
+@publiclibrary
+    - tests suitable for running on a typical public library's data set
+
+@academiclibrary
+    - tests suitable for running at a typical academic library
+
+@any
+    - tests suitable for any data set
+
+Tags can be added to an entire feature or an individual scenario.  The default will just run the @testing and @any
+
+## Further Reading
+
+http://www.cuke4ninja.com/
+http://cukes.info
+http://dannorth.net/introducing-bdd/
+http://dannorth.net/whats-in-a-story/
 
