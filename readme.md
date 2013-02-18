@@ -22,14 +22,14 @@ If you don't want to use the headless mode which requires phantomjs, run this:
 
 #### cucumber.yml
 
-You will need to copy cucumber.yml.sample to cucumber.yml, this defines a set of profiles for different tests to run.
+You will need to copy cucumber.yml.sample to cucumber.yml, this defines a set of profiles for different tests to run.  Please see cucumber documentation for more info on this file.
 
 #### config.yml
 
 This file currently has two options:
 
-  hostname: http://nameofevergreenserver.com
-  headless: true
+    hostname: http://nameofevergreenserver.com
+    headless: true
 
 If headless is any non-false value, the poltergeist driver will be used instead of selenium.   This requires phantomjs.
 http://phantomjs.org/
