@@ -6,14 +6,6 @@ When /^I do an? "(.*?)" search for "(.*?)"$/ do |searchtype, searchterm|
   click_button('Search')
 end
 
-When /^I search MARC tag "(.*?)" subfield "(.*?)" for "(.*?)"$/ do |tag,subfield,term|
-  fill_in 'tag', :with => tag
-  fill_in 'subfield', :with => subfield
-  fill_in 'term', :with => term
-  click_button('Search')
-end
-
-
 # RESULTS VERIFICATION
 
 Then /^I should get results$/ do
@@ -30,3 +22,6 @@ end
 Then /^I should get no results$/ do
   page.has_selector?('div.zero_search_hits')
 end
+
+
+

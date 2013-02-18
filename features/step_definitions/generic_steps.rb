@@ -23,3 +23,7 @@ Given /^I am on the expert search page$/ do
   click_on('Expert Search')
 end
 
+
+When /^I click on "(.*?)"$/ do |arg1|
+  click_on(arg1)
+end
