@@ -57,8 +57,8 @@ Tags can be added to an entire feature or an individual scenario.  The default w
 
 ## Further Reading
 
-http://www.cuke4ninja.com/
-http://cukes.info
-http://dannorth.net/introducing-bdd/
-http://dannorth.net/whats-in-a-story/
+  * http://www.cuke4ninja.com/
+  * http://cukes.info
+  * http://dannorth.net/introducing-bdd/
+  * http://dannorth.net/whats-in-a-story/
 
